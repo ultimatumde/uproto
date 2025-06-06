@@ -1,0 +1,20 @@
+include "s2clayout.fbs";
+
+namespace UProtoS2C;
+
+table S2CBufferData {
+  pid: string;
+  dim: Dim2D;
+  pos: Pos2D;
+  format: uint16;
+  info: S2CBufferInfo;
+}
+
+table S2CBufferInfo {
+  id: ulong;
+  stride: uint;
+  offset: uint;
+  size: ulong;
+}
+
+root_type S2CBufferData;

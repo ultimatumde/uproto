@@ -1,0 +1,21 @@
+namespace UProtoC2S;
+
+enum C2SMouseEventType: short {
+  Move = 0,
+  Button = 1,
+  Wheel = 2,
+}
+
+enum C2SMouseEventButton: short {
+  Left = 0,
+  Right = 1,
+  Middle = 2,
+}
+
+table C2SMouseInput {
+  pid: string;
+  x: float;
+  y: float;
+  button: C2SMouseEventButton;
+  action: C2SMouseEventType;
+}

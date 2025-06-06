@@ -1,0 +1,14 @@
+arch:
+  - meson
+  - flatbuffers
+  - gcc
+
+nix:
+  - meson
+  - flatbuffers
+  - gcc
+
+debian:
+  - meson
+  - flatbuffers-compiler
+  - gcc

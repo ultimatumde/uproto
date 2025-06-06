@@ -1,0 +1,10 @@
+
+struct Dim2D {
+  width: uint16;
+  height: uint16;
+}
+
+struct Pos2D {
+  x: float;
+  y: float;
+}

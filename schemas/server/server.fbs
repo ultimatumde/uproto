@@ -1,0 +1,41 @@
+include "s2clayout.fbs";
+include "wincontent.fbs";
+
+namespace UProtoS2C;
+
+enum S2CWindowEventType: short {
+  Create = 0,
+  Destroy = 1,
+}
+
+enum S2CWindowRequestedEventType: short {
+  Minimize = 0,
+  Maximize = 1,
+  Restore = 2,
+  Close = 3,
+  Resize = 4,
+  Move = 5,
+}
+
+table S2CWindowAssociateTitle {
+  pid: string;
+  title: string;
+}
+
+table S2CWindowServerEvent {
+  pid: string;
+  type: S2CWindowEventType;
+  props: S2CWindowProps;
+}
+
+table S2CWindowRequestedEvent {
+  pid: string;
+  type: S2CWindowRequestedEventType;
+  props: S2CWindowProps;
+}
+
+struct S2CWindowProps {
+  dim: Dim2D;
+  pos: Pos2D;
+  monitor: short;
+}

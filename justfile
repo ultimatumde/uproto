@@ -1,8 +1,6 @@
-init:
-    meson setup build
+import '../justfile'
+import 'buildcommons/build.just'
 
-reinit:
-    meson setup --reconfigure build
-
-build:
-    meson compile -C build
+proto:
+    flatc -c -o glue/server schemas/server/server.fbs
+    flatc -c -o glue/client schemas/client/client.fbs
