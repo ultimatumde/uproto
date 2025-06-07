@@ -12,5 +12,8 @@ dependencies = [
 lib = library(
   'protocols',
   'src/main.cpp',
-  include_directories : include_directories('./src')
+  include_directories : [
+    include_directories('./src'),
+    include_directories('./glue'),
+  ],
 )
